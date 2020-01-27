@@ -1,0 +1,53 @@
+FUNCTION FOR COMPUTING TAYLOR FACTOR GIVEN A TEXTURE FILE
+%Author: Prof. Veera Sundararaghavan, University of Michigan Ann Arbor,
+%Email: veeras@umich.edu
+USE Examples
+for HCP:  TaylorFactor = TFtool('hexagonal','Foil1EBSD.txt','radians') 
+
+for FCC:  TaylorFactor = TFtool('cubic','Al-Li-asReceived-4inch-LTLplane_GF1.txt','radians') 
+
+
+%%%%INPUTS
+% type : CRYSTAL symmetry, possible values: 'cubic' or 'hexagonal'
+
+% filename: Name of Euler angle file, %%%%%%%NOTE: REMOVE THE HEADERLINES
+% IN THE EULER ANGLE FILE. SEE EXAMPLE 'Foil1EBSD.txt' FOR INPUT EULER
+% ANGLE DATA FORMAT. Angles are in Bunge format
+
+% angleformat: Euler angle units, Possible values: 'degrees' or 'radians'
+
+%%%%%%%
+
+
+All inputs are in the file HCPinputs.m or FCCinputs.m. These inputs are
+
+1. Slip systems: 
+
+%slip direction
+m = [  -1.0000	0.0000	0.0000
+0.5000	0.8660	0.0000
+0.5000	-0.8660	0.0000
+.....
+];
+
+%slip normals
+n = [ 0.0000	0.0000	1.0000
+0.0000	0.0000	1.0000
+0.0000	0.0000	1.0000
+....];
+
+You can enter your slip/twin systems in these files. Make sure twin set is at the end.
+
+2. You have to enter the actual normalized CRSS values for all slip/twin systems in the line:
+
+Example in HCPinputs.m
+crss = [ones(3,1);ones(3,1)*2;ones(6,1)*2;ones(6,1)*2.5;ones(6,1)*1.7]; %using CRSS ratios for T6 WE43, rounded
+
+
+3. Enter the number of twin systems in ntwin. 
+
+Note: The applied load is in-plane (x-y) which is the same as the EBSD plane axes
+
+Note: I have added two separate folders: fine and coarse ODF meshes. Fine ODF will give better results but the code will be slow.
+
+
