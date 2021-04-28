@@ -1,1 +1,0 @@
-This folder includes a MATLAB script to generate the slip system-level grain size from equivalent ellipsoid information, for all grains and slip systems in a microstructure. This measure of grain size is then used as an input to PRISMS-CPFE to include the grain size contribution to the slip resistance on every slip system.
