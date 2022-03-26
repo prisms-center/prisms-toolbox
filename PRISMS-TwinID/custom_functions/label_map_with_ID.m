@@ -10,7 +10,7 @@
 % add parameter 'search_step_size'
 % chenzhe, 2020-11-03
 
-function hf = label_map_with_ID(X,Y,ID,hf,target_ID,color_char,font_size,search_step_size)
+function hf = label_map_with_ID(X,Y,ID,hf,target_ID,color_char,font_size,search_step_size,zpos)
 
 set(0,'currentfigure',hf);
 
@@ -34,14 +34,18 @@ ID_reduced = ID(1:search_step_size:end,1:search_step_size:end);
 X_reduced = X(1:search_step_size:end,1:search_step_size:end);
 Y_reduced = Y(1:search_step_size:end,1:search_step_size:end);
 
-z = gca;
-z = z.ZLim(2);
+% Looks like in Matlab r2021b, zpos can affect interactivity. Sometimes
+% need to plot at 0.
+if ~exist('zpos','var')
+    z = gca;
+    zpos = z.ZLim(2);
+end
 for ii = 1:length(target_ID)
     id = target_ID(ii);
     ind = (ID_reduced==id);
     x = mean(X_reduced(ind));
-    y = mean(Y_reduced(ind));
-    text(x,y,z,num2str(id),'color',color_char,'fontsize',font_size);
+    y = mean(Y_reduced(ind));    
+    text(x,y,zpos,num2str(id),'color',color_char,'fontsize',font_size);
 end
 
 hold off;

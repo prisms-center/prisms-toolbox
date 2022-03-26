@@ -56,7 +56,7 @@ switch k
         boundaryTF = M{2};
         boundaryTF(boundaryTF==0)=NaN;
         boundaryTF = boundaryTF * max(max(M{1}(:),10000));
-        surf(double(boundaryTF));
+        surf(double(boundaryTF),'facecolor','k');
         title(strrep(inputname(1),'_','\_'));
         m = M{1};
     case 3
@@ -87,7 +87,7 @@ switch k
         boundaryTF = double(M{4});
         boundaryTF(boundaryTF==0)=NaN;
         boundaryTF = boundaryTF * max(max(M{3}(:),10000));
-        surf(x,y,double(boundaryTF));
+        surf(x,y,double(boundaryTF),'facecolor','k');
         title(strrep(inputname(3),'_','\_'));
         m = M{3};
 end

@@ -3,6 +3,7 @@
 working_dir = 'E:\zhec umich Drive\2021-12-04 Mg4Al_B2 insitu EBSD';
 sample_name = 'Mg4Al_B2';
 iE_max = 13;    % maximum iE
+min_gs = 16;    % min grain size in pixels
 
 % grain file format example:
 % 'sample_name grain_file_type_1 iE=0.txt'
@@ -40,34 +41,20 @@ grain_pair = [
 % tolerance_cell{iB}, the tolerance angle for these grains
 % Note: if a grain needs to be divided into 3 grains, select it twice. The
 % larger grain will keep the original grain ID.
-ID_list{1} = [77,99]; 
-tolerance_cell{1} = [3,5];
-ID_list{2} = [32,81]; 
-tolerance_cell{2} = [5,3];
-ID_list{3} = [25]; 
-tolerance_cell{3} = [3];
-ID_list{4} = [12,20,5,25,61]; 
-tolerance_cell{4} = [3,3,3,3,3];
-ID_list{5} = [4,26,62]; 
-tolerance_cell{5} = [3,3,3];
-ID_list{6} = [27,15,5,32]; 
-tolerance_cell{6} = [3,3,3,3];
-ID_list{7} = [25,83]; 
-tolerance_cell{7} = [3,3];
-ID_list{8} = [23,103]; 
-tolerance_cell{8} = [3,3];
-ID_list{9} = [27,108]; 
-tolerance_cell{9} = [3,3];
-ID_list{10} = [28,33,68,103]; 
-tolerance_cell{10} = [3,3,3,3];
-ID_list{11} = [22,13,5,65]; 
-tolerance_cell{11} = [3,3,3,3];
-ID_list{12} = [22,13,27,62]; 
-tolerance_cell{12} = [3,3,3,3];
-ID_list{13} = [13]; 
-tolerance_cell{13} = [3];
-ID_list{14} = [80,101]; 
-tolerance_cell{14} = [3,3];
+ID_list{1} = [77,99,88]; 
+ID_list{2} = [32,81,92]; 
+ID_list{3} = [25,94]; 
+ID_list{4} = [12,20,5,25,61,87]; 
+ID_list{5} = [4,26,62,21,87]; 
+ID_list{6} = [27,15,5,32,93]; 
+ID_list{7} = [25,83,93]; 
+ID_list{8} = [23,103,92]; 
+ID_list{9} = [27,108,97]; 
+ID_list{10} = [28,33,68,103,92]; 
+ID_list{11} = [22,13,5,65,92]; 
+ID_list{12} = [22,13,27,62,89]; 
+ID_list{13} = [13,93]; 
+ID_list{14} = [80,101,90]; 
 
 % ID_merge_list{iB=iE+1} = [g1, g2; g3 g4; ...]
 % merge g1 into g2, g3 into g4, ...

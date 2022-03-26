@@ -3,6 +3,7 @@
 working_dir = '';
 sample_name = '';
 iE_max = 13;    % maximum iE
+min_gs = 16;    % min grain size in pixels
 
 % grain file format example:
 % 'sample_name grain_file_type_1 iE=0.txt'
@@ -24,37 +25,22 @@ grain_pair = [
     ];
 
 % ID_list{iB=iE+1}, grains need to be divided into two grains.
-% tolerance_cell{iB}, the tolerance angle for these grains
 % Note: if a grain needs to be divided into 3 grains, select it twice. The
 % larger grain will keep the original grain ID.
 ID_list{1} = []; 
-tolerance_cell{1} = [];
 ID_list{2} = []; 
-tolerance_cell{2} = [];
 ID_list{3} = []; 
-tolerance_cell{3} = [];
 ID_list{4} = []; 
-tolerance_cell{4} = [];
 ID_list{5} = []; 
-tolerance_cell{5} = [];
 ID_list{6} = []; 
-tolerance_cell{6} = [];
 ID_list{7} = []; 
-tolerance_cell{7} = [];
 ID_list{8} = []; 
-tolerance_cell{8} = [];
 ID_list{9} = []; 
-tolerance_cell{9} = [];
 ID_list{10} = []; 
-tolerance_cell{10} = [];
 ID_list{11} = []; 
-tolerance_cell{11} = [];
 ID_list{12} = []; 
-tolerance_cell{12} = [];
 ID_list{13} = []; 
-tolerance_cell{13} = [];
 ID_list{14} = []; 
-tolerance_cell{14} = [];
 
 % ID_merge_list{iB=iE+1} = [g1, g2; g3 g4; ...]
 % merge g1 into g2, g3 into g4, ...
