@@ -3,6 +3,7 @@
 working_dir = 'E:\zhec umich Drive\2021-12-02 Mg4Al_B1 insitu EBSD';
 sample_name = 'Mg4Al_B1';
 iE_max = 13;    % maximum iE
+min_gs = 16;    % min grain size in pixels
 
 % grain file format example:
 % 'sample_name grain_file_type_1 iE=0.txt'
@@ -41,33 +42,19 @@ grain_pair = [
 % Note: if a grain needs to be divided into 3 grains, select it twice. The
 % larger grain will keep the original grain ID.
 ID_list{1} = [1]; 
-tolerance_cell{1} = [5];
 ID_list{2} = [14,28]; 
-tolerance_cell{2} = [5,5];
 ID_list{3} = [1,11,59]; 
-tolerance_cell{3} = [5,5,5];
 ID_list{4} = [11,26,19]; 
-tolerance_cell{4} = [5,5,5];
 ID_list{5} = [19]; 
-tolerance_cell{5} = [5];
 ID_list{6} = [8,11,18,45]; 
-tolerance_cell{6} = [5,5,5,5];
 ID_list{7} = [1]; 
-tolerance_cell{7} = [5];
 ID_list{8} = [1]; 
-tolerance_cell{8} = [5];
 ID_list{9} = [1]; 
-tolerance_cell{9} = [5];
 ID_list{10} = [28]; 
-tolerance_cell{10} = [5];
 ID_list{11} = [26]; 
-tolerance_cell{11} = [5];
 ID_list{12} = [7]; 
-tolerance_cell{12} = [5];
 ID_list{13} = [7,26]; 
-tolerance_cell{13} = [5,5];
 ID_list{14} = [1]; 
-tolerance_cell{14} = [5];
 
 % ID_merge_list{iB=iE+1} = [g1, g2; g3 g4; ...]
 % merge g1 into g2, g3 into g4, ...

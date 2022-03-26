@@ -3,6 +3,7 @@
 working_dir = 'E:\zhec umich Drive\2021-06-29 UM129_Mg_C1 insitu EBSD';
 sample_name = 'UM129_Mg_C1';
 iE_max = 13;    % maximum iE
+min_gs = 16;    % min grain size in pixels
 
 % grain file format example:
 % 'sample_name grain_file_type_1 iE=0.txt'
@@ -41,39 +42,25 @@ grain_pair = [
 % Note: if a grain needs to be divided into 3 grains, select it twice. The
 % larger grain will keep the original grain ID.
 ID_list{1} = [78]; 
-tolerance_cell{1} = [5];
 ID_list{2} = [51,81]; 
-tolerance_cell{2} = [5,5];
 ID_list{3} = [53,84,84]; 
-tolerance_cell{3} = [5,5,5];
 ID_list{4} = [17,70,55,85,72]; 
-tolerance_cell{4} = [5,5,5,5,5];
 ID_list{5} = [60,92,77];
-tolerance_cell{5} = [5,5,5];
 ID_list{6} = [55,84,76]; 
-tolerance_cell{6} = [5,5,5];
 ID_list{7} = [53,83];
-tolerance_cell{7} = [5,5];
 ID_list{8} = [49,78]; 
-tolerance_cell{8} = [5,5];
 ID_list{9} = [50,81]; 
-tolerance_cell{9} = [5,5];
 ID_list{10} = [57,87]; 
-tolerance_cell{10} = [5,5];
 ID_list{11} = [62,101];
-tolerance_cell{11} = [5,5];
 ID_list{12} = [59,90]; 
-tolerance_cell{12} = [5,5];
 ID_list{13} = [58,89];
-tolerance_cell{13} = [5,5];
 ID_list{14} = [46,76]; 
-tolerance_cell{14} = [5,5];
 
 % ID_merge_list{iB=iE+1} = [g1, g2; g3 g4; ...]
 % merge g1 into g2, g3 into g4, ...
 ID_merge_list{1} = [];
 ID_merge_list{2} = [];
-ID_merge_list{3} = [];
+ID_merge_list{3} = [88,91];
 ID_merge_list{4} = [];
 ID_merge_list{5} = [];
 ID_merge_list{6} = [];

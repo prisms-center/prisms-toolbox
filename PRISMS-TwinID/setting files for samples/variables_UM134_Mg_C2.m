@@ -3,6 +3,7 @@
 working_dir = 'E:\zhec umich Drive\2021-01-15 UM134_Mg_C2 insitu EBSD';
 sample_name = 'UM134_Mg_C2';
 iE_max = 13;    % maximum iE
+min_gs = 16;    % min grain size in pixels
 
 % grain file format example:
 % 'sample_name grain_file_type_1 iE=0.txt'
@@ -41,33 +42,19 @@ grain_pair = [
 % Note: if a grain needs to be divided into 3 grains, select it twice. The
 % larger grain will keep the original grain ID.
 ID_list{1} = [270,333,212,67,179, 73,251];
-tolerance_cell{1} = [3,3,3, 3,3, 3,3];
 ID_list{2} = [71,152,177,248,269,335, 176];
-tolerance_cell{2} = [5,3,5,5,3,3, 3];
 ID_list{3} = [184,260,279, 66,157,14];
-tolerance_cell{3} = [5,5,3, 3,3,3];
 ID_list{4} = [19,76,189,265,284,410, 15,125,244];
-tolerance_cell{4} = [5,5,5,5,3,5, 3,3,3];
 ID_list{5} = [25,79,126,189,263,283, 243];
-tolerance_cell{5} = [5,5,3,5,5,3, 3];
 ID_list{6} = [24,183,257,276,218, 15,67,179];
-tolerance_cell{6} = [4,5,5,3,3, 3,3,3];
 ID_list{7} = [72,255,275, 178];
-tolerance_cell{7} = [4,4,3, 3];
 ID_list{8} = [14,14,71,79,100,104,249,269,327, 64,174];
-tolerance_cell{8} = [3,3,3,3,3,3,3,3,3, 3,3];
 ID_list{9} = [50,72,255,273,340, 15,176];
-tolerance_cell{9} = [3,3,3,3,3, 3,3];
 ID_list{10} = [72,106,180,254,273, 15,176];
-tolerance_cell{10} = [5,3,5,5,3, 3,3];
 ID_list{11} = [73,105,182,260,280,403, 105,177];
-tolerance_cell{11} = [5,5,5,5,3,5, 3,3];
 ID_list{12} = [76,110,259,276,369,349, 17,178,182];
-tolerance_cell{12} = [5,3,5,5,3,3, 3,3,3];
 ID_list{13} = [24,48,70,251,333,333, 173];
-tolerance_cell{13} = [5,5,5,5,3,5, 3];
 ID_list{14} = [52,71,244,265,208, 172,204];
-tolerance_cell{14} = [3,5,5,3,3, 3,3];
 
 % ID_merge_list{iB=iE+1} = [g1, g2; g3 g4; ...]
 % merge g1 into g2, g3 into g4, ...

@@ -28,7 +28,7 @@ while sum(ID(:)==0)>0
     ID(ID==0) = nb(ID==0);
     
     count = count + 1;
-    if count > 10 && rem(count,10)==1
+    if count > 10 && rem(count,100)==1
         disp(['many iterations, now @ iter = ', num2str(count), ', remaining points: ',num2str(sum(ID(:)==0))]);
     end
 
